@@ -1,18 +1,9 @@
 import { Outlet } from "react-router-dom";
+import "./styles.css";
 
 export function NakedLayout() {
   return (
-    <main
-      style={{
-        flex: 1,
-        minHeight: 0,
-        overflowX: "hidden",
-        overflowY: "auto",
-        width: "100%",
-        overscrollBehavior: "contain",
-        WebkitOverflowScrolling: "touch",
-      }}
-    >
+    <main className="app-layout">
       <Outlet />
     </main>
   );

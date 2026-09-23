@@ -5,7 +5,8 @@ import {
   useRouteError,
 } from "react-router-dom";
 import { NakedLayout } from "../../pages/layouts";
-import { mainPageRoute } from "../../pages/main";
+import { pageRoutes } from "../routes";
+import { MainPage } from "../../pages/main";
 
 function BubbleError() {
   const error = useRouteError();
@@ -17,12 +18,18 @@ function BubbleError() {
 
 const router = createBrowserRouter([
   {
-    errorElement: <BubbleError />,
     element: <NakedLayout />,
+    errorElement: <BubbleError />,
     children: [
-      mainPageRoute,
+      { path: "/", element: <MainPage /> },
+
+      ...pageRoutes.map(({ path, Component }) => ({
+        path,
+        element: <Component />,
+      })),
+
       {
-        loader: async () => redirect(pathKeys.root),
+        loader: async () => redirect("/"),
         path: "*",
       },
     ],

@@ -1,13 +1,16 @@
 import { withErrorBoundary } from "react-error-boundary";
 import { withSuspense } from "../../shared/lib/react/index.jsx";
 import { BrowserRouter } from "./RouterProvider";
+import { ToastProvider } from "./ToasterProvider.js";
 import React from "react";
 // import '../../i18n.js';
 
 export default function App() {
   return (
     <React.StrictMode>
-      <BrowserRouter />
+      <ToastProvider>
+        <BrowserRouter />
+      </ToastProvider>
     </React.StrictMode>
   );
 }
