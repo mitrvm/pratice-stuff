@@ -43,3 +43,41 @@ button {
   align-items: center;
   background-color: rgb(201, 201, 201);
 }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.type-select {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  background-color: rgb(201, 201, 201);
+  border-radius: 6px;
+
+  button {
+    border: none;
+    min-width: 70px;
+  }
+}
+
+.active {
+  background-color: rgb(87, 177, 103);
+}
+
+@keyframes colorChange {
+  from {
+    background-color: rgb(98, 236, 140);
+  }
+}
+
+.green {
+  background-color: rgb(44, 131, 44);
+  animation: colorChange 500ms linear;
+}
+
+.yellow {
+  background-color: rgb(216, 216, 115);
+  animation: colorChange 500ms linear;
+}
